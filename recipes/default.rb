@@ -4,6 +4,11 @@
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
 
+remote_file '/bin/jq' do
+  source node['test_2']['jq_url']
+  mode '0755'
+end
+
 template '/var/tmp/test_2_details.sh' do
   source 'details.sh.erb'
   variables(
